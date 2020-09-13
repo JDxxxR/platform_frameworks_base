@@ -56,6 +56,7 @@ public abstract class WindowOrientationListener {
     private int mRate;
     private String mSensorType;
     private Sensor mSensor;
+    private boolean museSystemClockforSensors;
     private OrientationJudge mOrientationJudge;
     private int mCurrentRotation = -1;
 
@@ -87,7 +88,6 @@ public abstract class WindowOrientationListener {
         mHandler = handler;
         mSensorManager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
         mRate = rate;
-
         mSensorType = context.getResources().getString(
                 com.android.internal.R.string.config_orientationSensorType);
         if (!TextUtils.isEmpty(mSensorType)) {
